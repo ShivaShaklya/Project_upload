@@ -90,30 +90,40 @@ fig,ax=plt.subplots(2,2)
 
 def draw_graph(j):
     #print(j)
+    '''next(r)
+    next(r)
+    next(r)
+    next(r)'''
+    
     row=next(r)
     time.append(float(row[0]))
     velocity.append(float(row[1]))
     a.append(float(row[2]))
     altitude.append(float(row[3]))
     thrust.append(float(row[4]))
+    print(time)
+    print(velocity)
+    print(a)
+    print(altitude)
+    print(thrust)
     ax[0,0].cla()
     ax[0,1].cla()
     ax[1,0].cla()
     ax[1,1].cla()
     #Velocity V/s Time
-    ax[0,0].plot(time,velocity,marker="o",markerfacecolor="#DB0F27")
+    ax[0,0].plot(time,velocity,markerfacecolor="#DB0F27")
     ax[0,0].title.set_text("Velocity V/s Time")
     #Acceleration V/s Time
-    ax[0,1].plot(time,a,marker="o",markerfacecolor="yellow")
+    ax[0,1].plot(time,a,markerfacecolor="yellow")
     ax[0,1].title.set_text("Acceleration V/s Time")
     #Altitude V/s Time
-    ax[1,0].plot(time,altitude,marker="o",markerfacecolor="orange")
+    ax[1,0].plot(time,altitude,markerfacecolor="orange")
     ax[1,0].title.set_text("Altitude V/s Time")
     #Thrust V/s time
-    ax[1,1].plot(time,thrust,marker="o",markerfacecolor="green")
+    ax[1,1].plot(time,thrust,markerfacecolor="green")
     ax[1,1].title.set_text("Thrust V/s Time")
 
-ani=FuncAnimation(fig,draw_graph,interval=1000)
+ani=FuncAnimation(fig,draw_graph,interval=100)
 
 
 plt.show()
